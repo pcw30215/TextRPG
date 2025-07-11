@@ -62,8 +62,7 @@ class Program
                     Console.WriteLine("\n계속하려면 아무 키나 누르세요.");
                     Console.ReadKey();
                     break;
-            }
-            
+            }            
         }
     }
 
@@ -119,8 +118,8 @@ class Program
             {
                 foreach (var item in inventory)
                 {
-                    string prefix = item.Equipped ? "[E]" : "";
-                    Console.WriteLine($"- {prefix}{item.Name}\t| {item.EffectType} +{item.EffectValue} | {item.Description}");
+                    string E = item.Equipped ? "[E]" : "";
+                    Console.WriteLine($"- {E}{item.Name}\t| {item.EffectType} +{item.EffectValue} | {item.Description}");
                 }
             }
 
@@ -158,8 +157,8 @@ class Program
                 for (int i = 0; i < inventory.Count; i++)
                 {
                     var item = inventory[i];
-                    string prefix = item.Equipped ? "[E]" : "";
-                    Console.WriteLine($"- {i + 1} {prefix}{item.Name}\t| {item.EffectType} +{item.EffectValue} | {item.Description}");
+                    string E = item.Equipped ? "[E]" : "";
+                    Console.WriteLine($"- {i + 1} {E}{item.Name}\t| {item.EffectType} +{item.EffectValue} | {item.Description}");
                 }
             }
 
@@ -242,7 +241,7 @@ class Program
             {
                 var item = shopItems[i];
                 string status = item.Purchased ? "구매완료" : $"{item.Price} G";
-                Console.WriteLine($"- {i + 1} {item.Name}\t| {item.EffectType} +{item.EffectValue}  | {item.Description} |  {status}");
+                Console.WriteLine($"-{i + 1} {item.Name}\t| {item.EffectType} +{item.EffectValue} | {item.Description} | {status}");
             }
 
             Console.WriteLine("\n0. 나가기");
